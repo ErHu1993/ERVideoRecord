@@ -147,8 +147,8 @@
  */
 - (UIImage *)getOriginalImage;
 ```
-
 <br />
+
 ### 参考类库 (已表感谢 ! 学习并膜拜大神们 ~)
 
 [PKShortVideo](https://github.com/pepsikirk/PKShortVideo)
