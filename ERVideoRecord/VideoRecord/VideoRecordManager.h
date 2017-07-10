@@ -9,9 +9,43 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol VideoRecordManagerDelegate;
+@class VideoRecordManager;
+
+@protocol VideoRecordManagerDelegate <NSObject>
+
+@optional;
+
+/**
+ 视频录制过短代理
+ 
+ @param manager self
+ */
+- (void)recordTimerTooShort:(VideoRecordManager *)manager;
+
+/**
+ 录制视频时间结束
+ 
+ @param manager self
+ */
+- (void)recordTimerEnd:(VideoRecordManager *)manager;
+
+
+/**
+ 录制进度改变
+ 
+ @param progress progress(0 ~ 1)
+ */
+- (void)recordProgressChange:(CGFloat)progress;
+
+@end
 
 @interface VideoRecordManager : NSObject
+
+/**
+ 录像管理类代理
+ */
+@property (nonatomic, weak) id<VideoRecordManagerDelegate>delegate;
+
 /**
  初始化
  
@@ -19,11 +53,6 @@
  @return self
  */
 - (instancetype)initWithSuperView:(UIView *)superView;
-
-/**
- 录像管理类代理
- */
-@property (nonatomic, weak) id<VideoRecordManagerDelegate>delegate;
 
 /**
  开启摄像头
@@ -62,40 +91,11 @@
  */
 - (void)getVideoAndThumbnailPathWithBlock:(void (^)(NSString *videoPath , NSString *thumbnailPath))callback;
 
-
 /**
  获取视频时长
  
  @return 时长
  */
 - (CGFloat)getRecordTime;
-
-@end
-
-@protocol VideoRecordManagerDelegate <NSObject>
-
-@optional;
-
-/**
- 视频录制过短代理
- 
- @param manager self
- */
-- (void)recordTimerTooShort:(VideoRecordManager *)manager;
-
-/**
- 录制视频时间结束
- 
- @param manager self
- */
-- (void)recordTimerEnd:(VideoRecordManager *)manager;
-
-
-/**
- 录制进度改变
- 
- @param progress progress(0 ~ 1)
- */
-- (void)recordProgressChange:(CGFloat)progress;
 
 @end

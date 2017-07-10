@@ -100,6 +100,7 @@
     
     imageGenerator.requestedTimeToleranceBefore = kCMTimeZero;
     
+    //获取视频中间帧作为缩略图, 可自行更改
     CMTime time = CMTimeMakeWithSeconds(totalSeconds / 2, 600);
     
     NSError *error = nil;
