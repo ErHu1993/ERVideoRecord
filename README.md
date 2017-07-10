@@ -121,7 +121,7 @@
 - (void)openVideo;
 
 /**
- 关闭摄
+ 关闭摄像
  */
 - (void)closeVideo;
 
