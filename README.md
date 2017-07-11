@@ -2,7 +2,7 @@
 
 ## 自己封装了一个视频录制和拍照的功能,可以方便集成使用
 
-![Gif浏览](http://upload-images.jianshu.io/upload_images/2773241-9ba6c8975f1d8c26.gif?imageMogr2/auto-orient/strip)
+![Gif浏览](http://upload-images.jianshu.io/upload_images/2773241-d3fa41b6ee844291.gif?imageMogr2/auto-orient/strip)
 
 ### 视频录制功能: 
 
